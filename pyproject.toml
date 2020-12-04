@@ -3,10 +3,9 @@ name = "hexlet_code"
 version = "0.1.0"
 description = ""
 authors = ["Roman Anisimov <r.anisimov.esq@gmail.com>"]
-packages = [{ include = "brain_games" }, ]
 
 [tool.poetry.dependencies]
-python = "^2.7"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 
