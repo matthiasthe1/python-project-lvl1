@@ -17,6 +17,7 @@ def main():
     print('Hello, ' + name + '!')
     print('Answer "yes" if the number is even, otherwise answer "no".')
     number = random.randint(0, 10000)
+    print(number)
     answr = input('Your answer: ')
     counter = 0
     while (counter < 3):
