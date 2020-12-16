@@ -9,25 +9,22 @@ def answer_check(answr, number):
         return True
     else:
     	return False
- 
-        		
-		
 def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    number = random.randint(0, 10000)
-    print(number)
-    answr = input('Your answer: ')
     counter = 0
     while (counter < 3):
-    	print('Question: ', number)
-    	if answer_check(answr, number):
+        number = random.randint(0, 10000)
+        print(number)
+        answr = input('Your answer: ')
+        print('Question: ', number)
+        if answer_check(answr, number):
     	    print('Correct!')
     	    counter +=1
-    	elif number % 2:
+        elif number % 2:
     	    print( "'" + answr + "' is wrong answer ;(. Correct answer was 'no'\nLet's try again, " + name + "!")
-    	elif number % 2 == 0:
+        elif number % 2 == 0:
     	    print( "'" + answr + "' is wrong answer ;(. Correct answer was 'yes'\nLet's try again, " + name + "!" )
     print('Congradulations, ' + name + '!')
     	
