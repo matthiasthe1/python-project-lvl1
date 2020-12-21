@@ -2,13 +2,7 @@
 import prompt
 import random
 
-##def answer_check(answr, number):
-##    if number % 2 and answr == 'no':
-##        return True
-##    elif number % 2 == 0 and answr == 'yes':
-##        return True
-##    else:
-#    	return False
+
 def checker(number_1, number_2, operation):
     if operation == ' * ':
         result = number_1 * number_2
@@ -17,7 +11,6 @@ def checker(number_1, number_2, operation):
     elif operation == ' - ':
         result = number_1 - number_2
     return result
-
 
 
 def main():
@@ -31,25 +24,24 @@ def main():
         hid_pos = random.randint(0, 9)
         i = 0
         a = a_0
-        print ('Question: ')
+        print('Question: ')
         while (i < 10):
             if i == hid_pos:
                 print('..', end=' ')
                 hidden = a
-                a +=step
-            else: 
+                a += step
+            else:
                 print(a, end=' ')
-                a +=step
-            i +=1
+                a += step
+            i += 1
         answr = input('\nYour answer: ')
         if answr == str(hidden):
-    	    print('Correct!')
-    	    counter +=1
+            print('Correct!')
+            counter += 1
         elif answr != str(hidden):
-    	    print( "'" + str(answr) + "' is wrong answer ;(. Correct answer was " + str(hidden) + "\nLet's try again, " + name + "!")
+            print("'" + str(answr) + "' is wrong answer ;(. Correct answer was " + str(hidden) + "\nLet's try again, " + name + "!")
     print('Congradulations, ' + name + '!')
-    	
-    
+
 
 if __name__ == '__main__':
     main()
