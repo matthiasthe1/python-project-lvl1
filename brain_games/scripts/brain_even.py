@@ -1,34 +1,29 @@
 #!/usr/bin/env python
-import prompt
 import random
+from brain_games import cli
+from brain_games import engine
 
 
-def answer_check(answr, number):
-    if number % 2 and answr == 'no':
-        return True
-    elif number % 2 == 0 and answr == 'yes':
-        return True
-    else:
-        return False
+def eval(number):
+    if number % 2:
+        return 'yes'
+    elif number % 2 == 0:
+        return 'no'
+
+
+def question_generator():
+    return random.randint(0, 100)
 
 
 def main():
-    name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
-    print('Answer "yes" if the number is even, otherwise answer "no".')
+    cli.welcome_user()
     counter = 0
     while (counter < 3):
-        number = random.randint(0, 10000)
-        print('Question: ', number)
-        answr = input('Your answer: ')
-        if answer_check(answr, number):
-            print('Correct!')
+        question = question_generator()
+        the_answer = eval(question)
+        if engine.engine(question, the_answer):
             counter += 1
-        elif number % 2:
-            print("'" + answr + "' is wrong answer ;(. Correct answer was 'no'\nLet's try again, " + name + "!")
-        elif number % 2 == 0:
-            print("'" + answr + "' is wrong answer ;(. Correct answer was 'yes'\nLet's try again, " + name + "!")
-    print('Congradulations, ' + name + '!')
+    print('Congradulations, ' + cli.name + '!')
 
 
 if __name__ == '__main__':
