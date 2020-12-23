@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 import random
-from brain_games import cli
+import prompt
 from brain_games import engine
 
 
 def eval(number):
     if number % 2:
-        return 'yes'
-    elif number % 2 == 0:
         return 'no'
+    elif number % 2 == 0:
+        return 'yes'
 
 
 def question_generator():
@@ -16,14 +16,15 @@ def question_generator():
 
 
 def main():
-    cli.welcome_user()
+    name = prompt.string('May I have your name? ')
+    print('Hello, ' + name + '!')
     counter = 0
     while (counter < 3):
         question = question_generator()
         the_answer = eval(question)
-        if engine.engine(question, the_answer):
+        if engine.engine(question, the_answer, name):
             counter += 1
-    print('Congradulations, ' + cli.name + '!')
+    print('Congradulations, ' + name + '!')
 
 
 if __name__ == '__main__':
