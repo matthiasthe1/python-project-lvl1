@@ -2,7 +2,7 @@
 
 
 def engine(question, the_answer, name):
-    print('Question: ', question)
+    print('Question:', question)
     answr = input('Your answer: ')
     if the_answer == answr:
         print('Correct!')
