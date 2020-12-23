@@ -24,7 +24,7 @@ def main():
         the_answer = eval(question)
         if engine.engine(question, the_answer, name):
             counter += 1
-    print('Congradulations, ' + name + '!')
+    print('Congratulations, ' + name + '!')
 
 
 if __name__ == '__main__':

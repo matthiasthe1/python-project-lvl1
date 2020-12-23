@@ -8,6 +8,6 @@ def engine(question, the_answer, name):
         print('Correct!')
         return True
     else:
-        print("'" + str(answr) + "' is wrong answer ;(. Correct answer was " + the_answer)
+        print("'" + str(answr) + "' is wrong answer ;(. Correct answer was '" + the_answer + "'")
         print("Let's try again, " + name + "!")
         return False
