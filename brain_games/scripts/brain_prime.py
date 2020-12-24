@@ -1,34 +1,34 @@
 #!/usr/bin/env python
-import prompt
-import random
 import math
+import random
+import prompt
+from brain_games import engine
 
 
-def checker(num):
+def eval(question):
     i = 2
-    while (i <= int(math.sqrt(num))):
-        if num % i == 0:
+    while (i <= int(math.sqrt(question))):
+        if question % i == 0:
             return 'no'
             break
         i += 1
     return 'yes'
 
 
+def question_generator():
+    return random.randint(2, 100)
+
+
 def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     counter = 0
     while (counter < 3):
-        num = random.randint(2, 100)
-        print('Question: ', num)
-        answr = input('Your answer: ')
-        if answr == checker(num):
-            print('Correct!')
+        question = question_generator()
+        the_answer = eval(question)
+        if engine.engine(question, the_answer, name):
             counter += 1
-        elif answr != checker(num):
-            print("'" + answr + "' is wrong answer ;(. Correct answer was " + checker(num) + "\nLet's try again, " + name + "!")
-    print('Congradulations, ' + name + '!')
+    print('Congratulations, ' + name + '!')
 
 
 if __name__ == '__main__':
