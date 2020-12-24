@@ -1,37 +1,37 @@
 #!/usr/bin/env python
 import prompt
 import random
+from brain_games import engine
 
 
-def checker(number_1, number_2, operation):
-    if operation == ' * ':
-        result = number_1 * number_2
-    elif operation == ' + ':
-        result = number_1 + number_2
-    elif operation == ' - ':
-        result = number_1 - number_2
-    return result
+def eval(question):
+    q_tupled = question[0].partition(question[1])
+    if question[1] == ' * ':
+        return int(q_tupled[0]) * int(q_tupled[2])
+    elif question[1] == ' + ':
+        return int(q_tupled[0]) + int(q_tupled[2])
+    elif question[1] == ' - ':
+        return int(q_tupled[0]) - int(q_tupled[2])
+
+
+def question_generator():
+    number_1 = random.randint(0, 100)
+    number_2 = random.randint(0, number_1)
+    operations = [' * ', ' + ', ' - ']
+    operation = random.choice(operations)
+    return (str(number_1) + operation + str(number_2), operation)
 
 
 def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
-    print('What is the result of the expression?')
     counter = 0
     while (counter < 3):
-        number_1 = random.randint(0, 10000)
-        number_2 = random.randint(0, number_1)
-        operations = [' * ', ' + ', ' - ']
-        operation = random.choice(operations)
-        print(number_1, operation, number_2)
-        answr = input('Your answer: ')
-        if answr == str(checker(number_1, number_2, operation)):
-            print('Correct!')
+        question = question_generator()
+        the_answer = eval(question)
+        if engine.engine(question[0], the_answer, name):
             counter += 1
-        elif answr != checker(number_1, number_2, operation):
-            print("'" + str(answr) + "' is wrong answer ;(. Correct answer was " + str(checker(number_1, number_2, operation)) + "\nLet's try again, " + name + "!")
-    print('Congradulations, ' + name + '!')
-
+    print('Congratulations, ' + name + '!')
 
 if __name__ == '__main__':
     main()
