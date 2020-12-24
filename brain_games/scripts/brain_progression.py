@@ -27,7 +27,8 @@ def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     counter = 0
-    while (counter < 3):
+    NUMBER_OF_ROUNDS = 3
+    while (counter < NUMBER_OF_ROUNDS):
         question = question_generator()
         the_answer = question[1]
         if engine.engine(question[0], the_answer, name):

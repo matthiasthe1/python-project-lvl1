@@ -25,13 +25,15 @@ def question_generator():
 def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
+    NUMBER_OF_ROUNDS = 3
     counter = 0
-    while (counter < 3):
+    while (counter < NUMBER_OF_ROUNDS):
         question = question_generator()
         the_answer = eval(question)
         if engine.engine(question[0], the_answer, name):
             counter += 1
     print('Congratulations, ' + name + '!')
+
 
 if __name__ == '__main__':
     main()
