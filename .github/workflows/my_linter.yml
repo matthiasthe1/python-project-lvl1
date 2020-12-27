@@ -16,8 +16,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: |
-          make package-install
-          pip install poetry
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
           make build
          # Runs the linter action
       - name: Run Linter
