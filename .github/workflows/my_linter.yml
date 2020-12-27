@@ -17,8 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
-          make install
-      # Runs the linter action
+         # Runs the linter action
       - name: Run Linter
         run: |
           make lint
