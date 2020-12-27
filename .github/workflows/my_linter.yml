@@ -14,8 +14,11 @@ jobs:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
         uses: actions/checkout@v2
-
+      - name: Install dependencies
+        run: |
+          pip install poetry
+          make install
       # Runs the linter action
-      - name: Run Super-Linter
+      - name: Run Linter
         run: |
           make lint
