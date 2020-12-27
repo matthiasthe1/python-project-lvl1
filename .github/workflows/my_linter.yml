@@ -24,8 +24,5 @@ jobs:
           source $HOME/.poetry/env
           make build
           poetry add --dev flake8
-         # Runs the linter action
-      - name: Run Linter
-        run: |
           make lint
-
+        
