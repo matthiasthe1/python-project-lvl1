@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: |
+          make package-install
           pip install poetry
           make build
          # Runs the linter action
