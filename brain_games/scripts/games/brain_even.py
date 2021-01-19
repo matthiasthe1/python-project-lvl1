@@ -4,28 +4,29 @@ import prompt
 from brain_games import engine
 
 
-def eval(number):
+def qa_gen():
+    number = random.randint(0, 100)
     if number % 2:
-        return 'no'
+        answ = 'no'
     elif number % 2 == 0:
-        return 'yes'
-
-
-def question_generator():
-    return random.randint(0, 100)
+        answ = 'yes'
+    return (number, answ)
 
 
 def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
-    counter = 0
+    print('Answer "yes" if the number is even, otherwise answer "no".')
     NUMBER_OF_ROUNDS = 3
-    while (counter < NUMBER_OF_ROUNDS):
-        question = question_generator()
-        the_answer = eval(question)
-        if engine.engine(question, the_answer, name):
-            counter += 1
-    print('Congratulations, ' + name + '!')
+    counter = 0
+    q = []
+    a = []
+    while counter < NUMBER_OF_ROUNDS:
+        q_a = qa_gen()
+        q.append(q_a[0])
+        a.append(q_a[1])
+        counter += 1
+    engine.engine(q, a, name)
 
 
 if __name__ == '__main__':

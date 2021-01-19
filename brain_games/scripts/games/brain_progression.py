@@ -4,36 +4,39 @@ import prompt
 from brain_games import engine
 
 
-def question_generator():
+def qa_gen():
     step = random.randint(0, 10)
     a_0 = random.randint(0, 10)
     hid_pos = random.randint(0, 9)
     i = 0
     a = a_0
-    s = ''
+    question = ''
     while (i < 10):
         if i == hid_pos:
-            s += '.. '
-            hidden = a
+            question += '.. '
+            answ = a
             a += step
         else:
-            s += str(a) + ' '
+            question += str(a) + ' '
             a += step
         i += 1
-    return (s, hidden)
+    return (question, answ)
 
 
 def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
-    counter = 0
+    print('What number is missing in the progression?')
     NUMBER_OF_ROUNDS = 3
-    while (counter < NUMBER_OF_ROUNDS):
-        question = question_generator()
-        the_answer = question[1]
-        if engine.engine(question[0], the_answer, name):
-            counter += 1
-    print('Congratulations, ' + name + '!')
+    counter = 0
+    q = []
+    a = []
+    while counter < NUMBER_OF_ROUNDS:
+        q_a = qa_gen()
+        q.append(q_a[0])
+        a.append(q_a[1])
+        counter += 1
+    engine.engine(q, a, name)
 
 
 if __name__ == '__main__':

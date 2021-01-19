@@ -4,35 +4,34 @@ import random
 from brain_games import engine
 
 
-def eval(question):
-    q_tupled = question[0].partition(question[1])
-    if question[1] == ' * ':
-        return int(q_tupled[0]) * int(q_tupled[2])
-    elif question[1] == ' + ':
-        return int(q_tupled[0]) + int(q_tupled[2])
-    elif question[1] == ' - ':
-        return int(q_tupled[0]) - int(q_tupled[2])
-
-
-def question_generator():
+def qa_gen():
     number_1 = random.randint(0, 100)
     number_2 = random.randint(0, number_1)
     operations = [' * ', ' + ', ' - ']
     operation = random.choice(operations)
-    return (str(number_1) + operation + str(number_2), operation)
+    if operation == ' * ':
+        answ = number_1 * number_2
+    elif operation == ' + ':
+        answ = number_1 + number_2
+    elif operation == ' - ':
+        answ = number_1 - number_2
+    return (str(number_1) + operation + str(number_2), answ)
 
 
 def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
+    print('What is the result of the expression?')
     NUMBER_OF_ROUNDS = 3
     counter = 0
-    while (counter < NUMBER_OF_ROUNDS):
-        question = question_generator()
-        the_answer = eval(question)
-        if engine.engine(question[0], the_answer, name):
-            counter += 1
-    print('Congratulations, ' + name + '!')
+    q = []
+    a = []
+    while counter < NUMBER_OF_ROUNDS:
+        q_a = qa_gen()
+        q.append(q_a[0])
+        a.append(q_a[1])
+        counter += 1
+    engine.engine(q, a, name)
 
 
 if __name__ == '__main__':
