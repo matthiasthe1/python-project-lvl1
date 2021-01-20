@@ -14,8 +14,10 @@ def engine(q, a, name):
             f = False
             break
     if f:
-        print('Congratulations, ' + name + '!')
+        out = 'Congratulations, {0}!'
+        print(out.format(name))
     else:
-        print("'" + str(answr) + "' is wrong answer ;(. Correct answer was '" + str(a[i]) + "'")
+        out = "'{0}' is wrong answer ;(. Correct answer was '{1}'"
+        print(out.format(answr, a[i]))
         print("Let's try again, " + name + "!")
     return
