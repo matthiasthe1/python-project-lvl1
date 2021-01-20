@@ -1,21 +1,23 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/matthiasthe1/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/matthiasthe1/python-project-lvl1/actions)
 
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+[![Actions Status](https://github.com/matthiasthe1/python-project-lvl1/workflows/my-linter/badge.svg)](https://github.com/matthiasthe1/python-project-lvl1/actions)
+
+<a href="https://codeclimate.com/github/matthiasthe1/python-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/c0dd3185b671c247749c/maintainability" /></a>
 
 ### brain-calc:
-https://asciinema.org/a/zvtrGLKJ2UgZb1rNIIg8X0yxt
+<a href="https://asciinema.org/a/H1PlHFZFFVm5KanX7Bv7ZOSS2" target="_blank"><img src="https://asciinema.org/a/H1PlHFZFFVm5KanX7Bv7ZOSS2.svg" /></a>
 
 ### brain-even:
-https://asciinema.org/a/7tsWCbOzeXzhQWUcFIlDDJUUQ
+<a href="https://asciinema.org/a/SHBdZg1fmCy3wX5d2s4bHhN5L" target="_blank"><img src="https://asciinema.org/a/SHBdZg1fmCy3wX5d2s4bHhN5L.svg" /></a>
 
 ### brain-gcd:
-https://asciinema.org/a/R5uo26PeckOJlKcYgmKAEq8Ik
+<a href="https://asciinema.org/a/IW4HeghXXR84PdzkjAqFxE4dO" target="_blank"><img src="https://asciinema.org/a/IW4HeghXXR84PdzkjAqFxE4dO.svg" /></a>
 
 ### brain-prime:
-https://asciinema.org/a/jZdFvtUgiu4e0Uk2n5i87X835
+<a href="https://asciinema.org/a/w6HLFcRzHFLbXINetvt68c4Of" target="_blank"><img src="https://asciinema.org/a/w6HLFcRzHFLbXINetvt68c4Of.svg" /></a>
 
 ### brain-progression:
-https://asciinema.org/a/ZYkSvWyhOxZvQ2pip8AeQeEhm
+<a href="https://asciinema.org/a/b6715pLjogV62OaasSPN6x057" target="_blank"><img src="https://asciinema.org/a/b6715pLjogV62OaasSPN6x057.svg" /></a>
 
 
