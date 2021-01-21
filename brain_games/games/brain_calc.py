@@ -10,12 +10,13 @@ def qa_gen():
     operations = [' * ', ' + ', ' - ']
     operation = random.choice(operations)
     if operation == ' * ':
-        answ = number_1 * number_2
+        answer = number_1 * number_2
     elif operation == ' + ':
-        answ = number_1 + number_2
+        answer = number_1 + number_2
     elif operation == ' - ':
-        answ = number_1 - number_2
-    return (str(number_1) + operation + str(number_2), answ)
+        answer = number_1 - number_2
+    question = str(number_1) + operation + str(number_2)
+    return (question, answer)
 
 
 def main():
@@ -24,14 +25,14 @@ def main():
     print('What is the result of the expression?')
     NUMBER_OF_ROUNDS = 3
     counter = 0
-    q = []
-    a = []
+    question_list = []
+    answer_list = []
     while counter < NUMBER_OF_ROUNDS:
         q_a = qa_gen()
-        q.append(q_a[0])
-        a.append(q_a[1])
+        question_list.append(q_a[0])
+        answer_list.append(q_a[1])
         counter += 1
-    engine.engine(q, a, name)
+    engine.engine(question_list, answer_list, name)
 
 
 if __name__ == '__main__':

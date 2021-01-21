@@ -14,13 +14,13 @@ def qa_gen():
     while (i < 10):
         if i == hid_pos:
             question += '.. '
-            answ = a
+            answer = a
             a += step
         else:
             question += str(a) + ' '
             a += step
         i += 1
-    return (question, answ)
+    return (question, answer)
 
 
 def main():
@@ -29,14 +29,14 @@ def main():
     print('What number is missing in the progression?')
     NUMBER_OF_ROUNDS = 3
     counter = 0
-    q = []
-    a = []
+    question_list = []
+    answer_list = []
     while counter < NUMBER_OF_ROUNDS:
         q_a = qa_gen()
-        q.append(q_a[0])
-        a.append(q_a[1])
+        question_list.append(q_a[0])
+        answer_list.append(q_a[1])
         counter += 1
-    engine.engine(q, a, name)
+    engine.engine(question_list, answer_list, name)
 
 
 if __name__ == '__main__':

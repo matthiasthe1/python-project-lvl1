@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 
-def engine(q, a, name):
+def engine(question_list, answer_list, name):
     i = 0
     f = True
     while (i < 3):
-        print('Question:', q[i])
-        answr = input('Your answer: ')
-        if str(a[i]) == answr:
+        print('Question:', question_list[i])
+        answer = input('Your answer: ')
+        if str(answer_list[i]) == answer:
             print('Correct!')
             i += 1
         else:
@@ -18,6 +18,6 @@ def engine(q, a, name):
         print(out.format(name))
     else:
         out = "'{0}' is wrong answer ;(. Correct answer was '{1}'"
-        print(out.format(answr, a[i]))
+        print(out.format(answer, answer_list[i]))
         print("Let's try again, " + name + "!")
     return
