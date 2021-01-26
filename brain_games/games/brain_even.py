@@ -4,6 +4,9 @@ import prompt
 from brain_games import engine
 
 
+NUMBER_OF_ROUNDS = 3
+
+
 def qa_gen():
     number = random.randint(0, 100)
     if number % 2:
@@ -17,7 +20,6 @@ def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    NUMBER_OF_ROUNDS = 3
     counter = 0
     question_list = []
     answer_list = []

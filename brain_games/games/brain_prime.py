@@ -5,6 +5,9 @@ import prompt
 from brain_games import engine
 
 
+NUMBER_OF_ROUNDS = 3
+
+
 def qa_gen():
     number = random.randint(2, 100)
     i = 2
@@ -21,7 +24,6 @@ def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    NUMBER_OF_ROUNDS = 3
     counter = 0
     question_list = []
     answer_list = []

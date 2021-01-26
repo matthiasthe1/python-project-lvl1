@@ -4,6 +4,9 @@ import random
 from brain_games import engine
 
 
+NUMBER_OF_ROUNDS = 3
+
+
 def qa_gen():
     number_1 = random.randint(0, 100)
     number_2 = random.randint(0, number_1)
@@ -23,7 +26,6 @@ def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     print('What is the result of the expression?')
-    NUMBER_OF_ROUNDS = 3
     counter = 0
     question_list = []
     answer_list = []

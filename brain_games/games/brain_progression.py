@@ -4,6 +4,9 @@ import prompt
 from brain_games import engine
 
 
+NUMBER_OF_ROUNDS = 3
+
+
 def qa_gen():
     step = random.randint(0, 10)
     a_0 = random.randint(0, 10)
@@ -27,7 +30,6 @@ def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     print('What number is missing in the progression?')
-    NUMBER_OF_ROUNDS = 3
     counter = 0
     question_list = []
     answer_list = []
