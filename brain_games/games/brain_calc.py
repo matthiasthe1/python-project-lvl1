@@ -17,7 +17,7 @@ def calculate(number_1, number_2, operation):
         return number_1 - number_2
 
 
-def qa_gen():
+def qa_generate():
     number_1 = random.randint(0, 100)
     number_2 = random.randint(0, number_1)
     operations = [' * ', ' + ', ' - ']
@@ -27,7 +27,7 @@ def qa_gen():
     return (question, answer)
 
 
-def main():
+def game():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     print(GAME_MESSANGE)
@@ -35,12 +35,8 @@ def main():
     question_list = []
     answer_list = []
     while counter < NUMBER_OF_ROUNDS:
-        q_a = qa_gen()
+        q_a = qa_generate()
         question_list.append(q_a[0])
         answer_list.append(q_a[1])
         counter += 1
     engine.engine(question_list, answer_list, name)
-
-
-if __name__ == '__main__':
-    main()
