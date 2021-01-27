@@ -5,6 +5,16 @@ from brain_games import engine
 
 
 NUMBER_OF_ROUNDS = 3
+GAME_MESSANGE = 'What is the result of the expression?'
+
+
+def calculate(number_1, number_2, operation):
+    if operation == ' * ':
+        return number_1 * number_2
+    elif operation == ' + ':
+        return number_1 + number_2
+    elif operation == ' - ':
+        return number_1 - number_2
 
 
 def qa_gen():
@@ -12,12 +22,7 @@ def qa_gen():
     number_2 = random.randint(0, number_1)
     operations = [' * ', ' + ', ' - ']
     operation = random.choice(operations)
-    if operation == ' * ':
-        answer = number_1 * number_2
-    elif operation == ' + ':
-        answer = number_1 + number_2
-    elif operation == ' - ':
-        answer = number_1 - number_2
+    answer = calculate(number_1, number_2, operation)
     question = str(number_1) + operation + str(number_2)
     return (question, answer)
 
@@ -25,7 +30,7 @@ def qa_gen():
 def main():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
-    print('What is the result of the expression?')
+    print(GAME_MESSANGE)
     counter = 0
     question_list = []
     answer_list = []
