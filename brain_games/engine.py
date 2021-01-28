@@ -18,8 +18,7 @@ def engine(question_list, answer_list, GAME_MESSANGE):
             is_correct = False
             break
     if is_correct:
-        out = 'Congratulations, {0}!'
-        print(out.format(name))
+        print('Congratulations, {0}!'.format(name))
     else:
         out = "'{0}' is wrong answer ;(. Correct answer was '{1}'"
         print(out.format(answer, answer_list[round]))
