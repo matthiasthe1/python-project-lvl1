@@ -2,7 +2,7 @@
 import prompt
 
 
-def engine(question_list, answer_list, GAME_MESSANGE):
+def start(question_list, answer_list, GAME_MESSANGE):
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     print(GAME_MESSANGE)
