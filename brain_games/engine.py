@@ -6,22 +6,22 @@ def engine(question_list, answer_list, GAME_MESSANGE):
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     print(GAME_MESSANGE)
-    i = 0
-    f = True
-    while (i < 3):
-        print('Question:', question_list[i])
+    round = 0
+    is_correct = True
+    while (round < 3):
+        print('Question:', question_list[round])
         answer = input('Your answer: ')
-        if str(answer_list[i]) == answer:
+        if str(answer_list[round]) == answer:
             print('Correct!')
-            i += 1
+            round += 1
         else:
-            f = False
+            is_correct = False
             break
-    if f:
+    if is_correct:
         out = 'Congratulations, {0}!'
         print(out.format(name))
     else:
         out = "'{0}' is wrong answer ;(. Correct answer was '{1}'"
-        print(out.format(answer, answer_list[i]))
+        print(out.format(answer, answer_list[round]))
         print("Let's try again, " + name + "!")
     return
