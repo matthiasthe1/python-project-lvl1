@@ -15,18 +15,18 @@ def answer_calculate(number):
 
 
 def qa_generate():
-    number = random.randint(0, 100)
-    answer = answer_calculate(number)
-    return (number, answer)
-
-
-def game():
     counter = 0
     question_list = []
     answer_list = []
     while counter < NUMBER_OF_ROUNDS:
-        q_a = qa_generate()
-        question_list.append(q_a[0])
-        answer_list.append(q_a[1])
+        number = random.randint(0, 100)
+        answer = answer_calculate(number)
+        question_list.append(number)
+        answer_list.append(answer)
         counter += 1
-    engine.engine(question_list, answer_list, GAME_MESSANGE)
+    return (question_list, answer_list)
+
+
+def game():
+    q_a = qa_generate()
+    engine.start(q_a[0], q_a[1], GAME_MESSANGE)
