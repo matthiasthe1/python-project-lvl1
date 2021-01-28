@@ -1,7 +1,11 @@
 #!/usr/bin/env python
+import prompt
 
 
-def engine(question_list, answer_list, name):
+def engine(question_list, answer_list, GAME_MESSANGE):
+    name = prompt.string('May I have your name? ')
+    print('Hello, ' + name + '!')
+    print(GAME_MESSANGE)
     i = 0
     f = True
     while (i < 3):
