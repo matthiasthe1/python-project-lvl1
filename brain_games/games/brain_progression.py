@@ -1,42 +1,25 @@
-#!/usr/bin/env python
 import random
-from brain_games import engine
 
 
 NUMBER_OF_ROUNDS = 3
-GAME_MESSANGE = 'What number is missing in the progression?'
+GAME_DESCRIPTION = 'What number is missing in the progression?'
+LENGTH = 10
 
 
-def answer_calculate(a_0, step, hid_pos):
-    return a_0 + step * hid_pos
+def find_answer(start, step, hidden):
+    return start + step * hidden
 
 
 def qa_generate():
-    counter = 0
-    question_list = []
-    answer_list = []
-    while counter < NUMBER_OF_ROUNDS:
-        step = random.randint(0, 10)
-        a_0 = random.randint(0, 10)
-        hid_pos = random.randint(0, 9)
-        i = 0
-        a = a_0
-        question = ''
-        while (i < 10):
-            if i == hid_pos:
-                question += '.. '
-                a += step
-            else:
-                question += str(a) + ' '
-                a += step
-            i += 1
-        answer = answer_calculate(a_0, step, hid_pos)
-        question_list.append(question)
-        answer_list.append(answer)
-        counter += 1
-    return (question_list, answer_list)
-
-
-def game():
-    q_a = qa_generate()
-    engine.start(q_a[0], q_a[1], GAME_MESSANGE)
+    step = random.randint(0, 10)
+    start = random.randint(0, 10)
+    hidden = random.randint(0, 9)
+    i = 0
+    question = ''
+    for i in range(LENGTH):
+        if i == hidden:
+            question += '.. '
+            continue
+        question += str(start + i * step) + ' '
+    answer = str(find_answer(start, step, hidden))
+    return (question, answer)
