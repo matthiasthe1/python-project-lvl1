@@ -6,10 +6,7 @@ GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def is_even(number):
-    if number % 2:
-        return 'no'
-    elif number % 2 == 0:
-        return 'yes'
+    return "yes" if (number % 2 == 0) else "no"
 
 
 def qa_generate():
