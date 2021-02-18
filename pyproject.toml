@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hexlet_code"
+name = "hexlet-code"
 version = "0.1.0"
 description = "Educational project (stage 1, Python course by hexlet.io )"
 repository = "https://github.com/matthiasthe1/python-project-lvl1"
