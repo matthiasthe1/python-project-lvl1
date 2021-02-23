@@ -8,16 +8,15 @@ GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no"
 
 def is_prime(number):
     i = 2
-    answer = 'yes'
     while (i <= int(math.sqrt(number))):
         if number % i == 0:
-            answer = 'no'
-            break
+            return False
         i += 1
-    return answer
+    return True
 
 
 def generate_round():
     number = random.randint(2, 100)
     answer = is_prime(number)
+    answer = "yes" if (is_prime(number)) else "no"
     return (number, answer)
