@@ -11,14 +11,11 @@ def start(game):
         question, correct_answer = game.generate_round()
         print('Question:', question)
         answer = input('Your answer: ')
-        if check(answer, correct_answer) is False:
+        if not check(answer, correct_answer):
             print("'{0}' is wrong answer ;(. Correct answer was '{1}'\nLet's try again, {2}!".format(answer, correct_answer, name)) # noqa
-            break
-        else:
-            print('Correct!')
-    else:
-        print("Congratulations, {}!".format(name))
-    return
+            return
+        print('Correct!')
+    print("Congratulations, {}!".format(name))
 
 
 def check(answer, correct_answer):
