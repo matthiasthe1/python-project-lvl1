@@ -10,7 +10,7 @@ def find_answer(start, step, hidden):
     return start + step * hidden
 
 
-def qa_generate():
+def generate_round():
     step = random.randint(0, 10)
     start = random.randint(0, 10)
     hidden = random.randint(0, 9)

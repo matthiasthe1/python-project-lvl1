@@ -17,7 +17,7 @@ def is_prime(number):
     return answer
 
 
-def qa_generate():
+def generate_round():
     number = random.randint(2, 100)
     answer = is_prime(number)
     return (number, answer)

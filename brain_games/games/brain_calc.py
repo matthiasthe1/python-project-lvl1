@@ -15,7 +15,7 @@ def calculate(number_1, number_2, operator):
         return number_1 - number_2
 
 
-def qa_generate():
+def generate_round():
     number_1 = random.randint(0, 100)
     number_2 = random.randint(0, number_1)
     operator = random.choice(OPERATORS)

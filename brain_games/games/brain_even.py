@@ -9,7 +9,7 @@ def is_even(number):
     return "yes" if (number % 2 == 0) else "no"
 
 
-def qa_generate():
+def generate_round():
     number = random.randint(0, 100)
     answer = is_even(number)
     return (str(number), answer)
