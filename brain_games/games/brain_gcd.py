@@ -1,7 +1,6 @@
 import random
 
 
-NUMBER_OF_ROUNDS = 3
 GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
 
