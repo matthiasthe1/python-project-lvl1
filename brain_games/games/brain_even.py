@@ -5,7 +5,7 @@ GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def is_even(question):
-    return not(question % 2 == 0)
+    return question % 2 == 0
 
 
 def generate_round():
