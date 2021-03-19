@@ -10,9 +10,8 @@ def create_progression(start, step, LENGTH):
 
 
 def get_question(progression, hidden_index):
-    str_progression = ' '.join(map(str,progression))
-    str_progression[hidden_index] = MARKER
-    return str_progression
+    progression[hidden_index] = MARKER
+    return (' '.join(map(str, progression)))
 
 
 def generate_round():
