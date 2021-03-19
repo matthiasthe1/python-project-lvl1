@@ -11,6 +11,6 @@ def gcd_calculate(a, b):
 def generate_round():
     number_1 = random.randint(0, 100)
     number_2 = random.randint(0, 100)
-    question = '{0} {1}'.format(str(number_1), str(number_2))
+    question = '{0} {1}'.format(number_1, number_2)
     answer = str(gcd_calculate(number_1, number_2))
     return (question, answer)

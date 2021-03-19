@@ -10,14 +10,14 @@ map_symbols_to_operators = {
 }
 
 
-def calculate(number_1, number_2, operation):
-    return str(map_symbols_to_operators[operation](number_1, number_2))
+def get_answer(number_1, number_2, random_operator):
+    return str(map_symbols_to_operators[random_operator](number_1, number_2))
 
 
 def generate_round():
     number_1 = random.randint(0, 100)
     number_2 = random.randint(0, number_1)
-    operation = random.choice(list(map_symbols_to_operators.keys()))
-    answer = calculate(number_1, number_2, operation)
-    question = '{0} {1} {2}'.format(number_1, operation, number_2)
+    random_operator = random.choice(list(map_symbols_to_operators.keys()))
+    answer = get_answer(number_1, number_2, random_operator)
+    question = '{0} {1} {2}'.format(number_1, random_operator, number_2)
     return (question, answer)
