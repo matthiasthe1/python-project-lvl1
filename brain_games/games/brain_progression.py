@@ -6,7 +6,7 @@ MARKER = '..'
 
 
 def create_progression(start, step, LENGTH):
-    return [start + step*x for x in range(0, LENGTH)]
+    return [start + step * x for x in range(0, LENGTH)]
 
 
 def get_question(progression, hidden_index):
