@@ -10,7 +10,7 @@ def create_progression(start, step, length):
 
 
 def get_question(progression, hidden_index):
-    progression = progression[:hidden_index - 1] + [MARKER] + progression[hidden_index] # noqa
+    progression = progression[:hidden_index - 1] + [MARKER] + progression[hidden_index:] # noqa
     return (' '.join(map(str, progression)))
 
 
