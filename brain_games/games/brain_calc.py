@@ -11,7 +11,7 @@ map_operator_to_operation = {
 
 
 def calculate_answer(number_1, number_2, random_operator):
-    return str(map_operator_to_operation[random_operator](number_1, number_2))
+    return map_operator_to_operation[random_operator](number_1, number_2)
 
 
 def generate_round():
