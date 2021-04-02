@@ -2,7 +2,7 @@ import random
 import operator
 
 
-GAME_DESCRIPTION = 'What is the result of the expression?'
+DESCRIPTION = 'What is the result of the expression?'
 map_operator_to_operation = {
     '+': operator.add,
     '-': operator.sub,

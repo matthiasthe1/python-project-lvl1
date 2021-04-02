@@ -2,7 +2,7 @@ import math
 import random
 
 
-GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'   # noqa
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'   # noqa
 
 
 def is_prime(number):

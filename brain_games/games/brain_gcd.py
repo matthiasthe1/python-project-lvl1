@@ -1,7 +1,7 @@
 import random
 
 
-GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.'
+DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
 
 def calculate_gcd(a, b):
