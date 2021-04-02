@@ -2,16 +2,16 @@ import random
 
 LENGTH = 10
 DESCRIPTION = 'What number is missing in the progression?'
-MARKER = '..'
 
 
 def create_progression(start, step, LENGTH):
     return [start + step * i for i in range(0, LENGTH)]
 
 
-def get_question(progression, hidden_element_index):
-    progression = progression[:hidden_element_index] + [MARKER] + progression[hidden_element_index + 1:] # noqa
-    return (' '.join(map(str, progression)))
+def get_question(progression, hidden_element_index, marker='..'):
+    copied_progression = progression[:]
+    copied_progression[hidden_element_index] = marker
+    return (' '.join(map(str, copied_progression)))
 
 
 def generate_round():
