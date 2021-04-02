@@ -4,11 +4,11 @@ import random
 GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def is_even(question):
-    return question % 2 == 0
+def is_even(number):
+    return number % 2 == 0
 
 
 def generate_round():
-    question = random.randint(0, 100)
-    answer = 'yes' if is_even(question) else 'no'
-    return (str(question), answer)
+    number = random.randint(0, 100)
+    answer = 'yes' if is_even(number) else 'no'
+    return (str(number), answer)
